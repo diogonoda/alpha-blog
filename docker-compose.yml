@@ -12,6 +12,12 @@ services:
     links:
       - redis:redis
 
+#  sidekiq:
+#    build: .
+#    command: bundle exec sidekiq
+#    links:
+#      - redis:redis
+
   redis:
     image: redis
     ports:
