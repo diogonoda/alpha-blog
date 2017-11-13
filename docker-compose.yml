@@ -9,3 +9,16 @@ services:
       - "3000:3000"
     stdin_open: true
     tty: true
+    links:
+      - redis:redis
+
+#  sidekiq:
+#    build: .
+#    command: bundle exec sidekiq
+#    links:
+#      - redis:redis
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
