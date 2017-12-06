@@ -12,11 +12,13 @@ services:
     links:
       - redis:redis
 
-#  sidekiq:
-#    build: .
-#    command: bundle exec sidekiq
-#    links:
-#      - redis:redis
+  sidekiq:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: bundle exec sidekiq
+    links:
+      - redis:redis
 
   redis:
     image: redis

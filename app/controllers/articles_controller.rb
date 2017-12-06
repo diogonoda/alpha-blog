@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
+    ReportWorker.perform_async(Time.now)
     @articles = Article.paginate(page: params[:page], per_page: 4)
   end
 
