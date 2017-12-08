@@ -17,8 +17,24 @@ $navbar-default-bg: black;
   text-decoration: none;
 }
 
+.badge {
+  background-color: #CEF6F5;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-xlarge {
+  font-size: 1.7em;
+  background-color: black;
+}
+
 .center {
   text-align: center;
+}
+
+.input_checkbox input {
+  width: auto !important;
 }
 
 .jumbotron {
@@ -33,11 +49,6 @@ $navbar-default-bg: black;
   margin-bottom: 30px;
   letter-spacing: -1px;
   font-weight: bold;
-}
-
-.btn-xlarge {
-  font-size: 1.7em;
-  background-color: black;
 }
 
 .article-actions {
