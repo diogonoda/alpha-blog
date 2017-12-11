@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'sales', to: 'sales#index'
+  post 'sales/import'
+
   resources :comments
   resources :users, except: [:new]
   resources :articles
@@ -8,7 +11,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to: 'pages#about'
 
-  get 'signup', to: 'users#new' 
+  get 'signup', to: 'users#new'
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
