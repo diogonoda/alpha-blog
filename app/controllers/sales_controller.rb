@@ -4,9 +4,14 @@ class SalesController < ApplicationController
   end
 
   def import
-    Sale.import(params[:file])
+    if params[:file]
+      Sale.import(params[:file])
 
-    flash[:success] = "Data successfully imported"
-    redirect_to root_url
+      flash[:success] = "Data successfully imported"
+    else
+      flash.now[:danger] = "Please, inform a file"
+
+      render 'new'
+    end
   end
 end

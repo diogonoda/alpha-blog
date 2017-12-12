@@ -1,3 +1,24 @@
+<h1 align="center">Import sales records</h1>
+
+<div class="row center">
+	<div class="col-xs-8 col-xs-offset-2">
+    <form>
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" readonly>
+          <label class="input-group-btn">
+            <span class="btn btn-primary">
+              Browse<input type="file" style="display: none;" multiple>
+            </span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <div>
   <div class="row">
     <tr>
@@ -21,8 +42,3 @@
   <% end %>
 </div>
 
-<h4>Import sales records</h4>
-  <%= form_tag sales_import_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import file" %>
-  <% end %>

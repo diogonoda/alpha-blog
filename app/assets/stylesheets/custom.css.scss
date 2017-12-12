@@ -24,9 +24,34 @@ $navbar-default-bg: black;
   font-weight: bold;
 }
 
+.btn-submit {
+  width: 250px;
+}
+
 .btn-xlarge {
   font-size: 1.7em;
   background-color: black;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }
 
 .center {
@@ -35,6 +60,11 @@ $navbar-default-bg: black;
 
 .input_checkbox input {
   width: auto !important;
+}
+
+.input-group {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .jumbotron {

@@ -15,4 +15,8 @@ class Sale < ApplicationRecord
       sale.save!
     end
   end
+
+  def new
+
+  end
 end

@@ -1,0 +1,21 @@
+<h1 align="center">Import sales records</h1>
+
+<div class="row center">
+  <div class="col-xs-6 col-xs-offset-3">
+    <%= form_tag import_sales_path, multipart: true do %>
+      <div class="form-group">
+        <div class="input-group">
+          <%= file_field_tag :file, style: 'display:none' %>
+          <%= text_field_tag :file, params[:file], class: 'form-control', disabled: true %>
+          <label class="input-group-btn">
+            <span class="btn btn-large btn-primary btn-file">
+              Browse<%= file_field_tag :file %>
+            </span>
+          </label>
+        </div>
+
+        <%= submit_tag "Submit", class: 'btn btn-primary btn-submit' %>
+      </div>
+    <% end %>
+  </div>
+</div>
