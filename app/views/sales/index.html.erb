@@ -19,26 +19,8 @@
   </div>
 </div>
 
-<div>
-  <div class="row">
-    <tr>
-      <th>Purchaser Name</th>
-      <th>Item Description</th>
-      <th>Item Price</th>
-      <th>Purchase Count</th>
-      <th>Merchant Address</th>
-      <th>Merchant Name</th>
-    </tr>
-  </div>
-  <%= @sales.each do |sale| %>
-    <tr>
-      <td>sale.purchaser_name</td>
-      <td>sale.item_description</td>
-      <td>sale.item_price</td>
-      <td>sale.purchase_count</td>
-      <td>sale.merchant_address</td>
-      <td>sale.merchant_name</td>
-    </tr>
+<h4>Import sales records</h4>
+  <%= form_tag import_sales_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import file" %>
   <% end %>
-</div>
-
