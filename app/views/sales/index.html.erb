@@ -22,7 +22,7 @@
 </div>
 
 <h4>Import sales records</h4>
-  <%= form_tag sales_import_path, multipart: true do %>
+  <%= form_tag import_sales_path, multipart: true do %>
     <%= file_field_tag :file %>
     <%= submit_tag "Import file" %>
   <% end %>

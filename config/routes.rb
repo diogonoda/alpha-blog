@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'sales', to: 'sales#index'
-  post 'sales/import'
+  resources :sales, only: [:index, :new] do
+    post :import, on: :collection
+  end
 
   resources :comments
   resources :users, except: [:new]

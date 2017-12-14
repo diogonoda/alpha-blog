@@ -5,8 +5,11 @@ class SalesController < ApplicationController
 
   def import
     Sale.import(params[:file])
+    @sales = Sale.all
+    @total_imported_value = Sale.total_imported_value
+
 
     flash[:success] = "Data successfully imported"
-    redirect_to root_url
+    render 'result'
   end
 end
