@@ -5,10 +5,8 @@ class SalesController < ApplicationController
 
   def import
     if params[:file]
-      Sale.import(params[:file])
-      @total_imported_value = Sale.total_imported_value
+      @total_imported_value = SalesImporter.importer(params[:file])
 
-      flash[:success] = "Data successfully imported"
       render 'result'
     else
       flash.now[:danger] = "Please, inform a file"

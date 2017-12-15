@@ -5,10 +5,10 @@
     <%= form_tag import_sales_path, multipart: true do %>
       <div class="form-group">
         <div class="input-group">
-          <%= text_field_tag :file, params[:file], class: 'form-control', disabled: true %>
+          <%= text_field_tag :filename, params[:file], class: 'form-control', disabled: true %>
           <label class="input-group-btn">
             <span class="btn btn-large btn-primary btn-file">
-              Browse<%= file_field_tag :file %>
+              Browse<%= file_field_tag :file, id: 'browse-btn' %>
             </span>
           </label>
         </div>
@@ -18,3 +18,8 @@
     <% end %>
   </div>
 </div>
+<script type="text/javascript">
+  document.getElementById("browse-btn").onchange = function ( e ) {
+    document.getElementById("filename").value = e.target.value.split( '\\' ).pop();
+  };
+</script>

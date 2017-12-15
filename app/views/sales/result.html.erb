@@ -1,1 +1,1 @@
-<p>Total sales <%= @total_imported_value%></p>
+<h2 align="center">We had a total sales amount of <%= number_to_currency(@total_imported_value, unit: "R$ ", separator: ",", delimiter: ".") %>!!!</h2>
